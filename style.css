@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+}
+
+.jumbotron{
+    background-color: red;
+    color: white;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 1;
+    display: flex;
+    justify-content: center;
+    
+}
+.card{
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.card-body {
+    font-size: 15px;
+}
+.employee-card {
+    box-shadow: 10px 6px 6px lightslategray;
+    margin: 1.9rem;
+    background-color: lightgray;
+
+}
+.card-title{
+    font-size: 15px;
+   
+}
+.card-header{
+    background-color: blue;
+    color: white;
+}
