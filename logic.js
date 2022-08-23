@@ -1,6 +1,10 @@
 
 const inquirer = require('inquirer')
 const fs = require('fs')
+const Manager = require('/Constructors/Manager')
+const Engineer = require('/Constructors/Engineer')
+const Intern = require('.Constructors/Inern')
+
 
 const managerInfo = []
 
@@ -68,7 +72,9 @@ const managerInfo = []
         ])
 
         .then((answers) => {
-            managerInfo.push(answers.managername, answers.managerid, answers.manageremail, answers.managerphone,)
+        const newManager = new Manager(answers.managername, answers.managerid, answers.manageremail, answers.managerphone)
+
+            managerInfo.push(newManager);
             console.log(managerInfo);
             createTeam();
         });
