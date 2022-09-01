@@ -1,33 +1,27 @@
-// Javascript needs to generate an HTML page 
 const inquirer = require('inquirer')
-
 const Manager = require('./Constructors/Manager')
 const Engineer = require('./Constructors/Engineer')
 const Intern = require('./Constructors/Intern')
 const Templates = require('./Generated File/Templates')
 const writeFile = require('./fileWriter')
 
-// Arrays
 const teamArray = []
 
 let html = Templates(teamArray)
 
-// Build team main function
 function buildTeam() {
-
-    // manager function
-    createManager()
+       createManager()
     function createManager() {
         inquirer.prompt([
             {
                 type: 'input',
                 name: 'managername',
-                message: "Enter a manager's name.",
+                message: "Enter a manager's name:",
                 validate: managernameInput => {
                     if (managernameInput) {
                         return true;
                     } else {
-                        console.log("Please enter a manager's name.")
+                        console.log("Please enter a manager's name:")
                         return false;
                     }
                 }
@@ -36,12 +30,12 @@ function buildTeam() {
             {
                 type: 'input',
                 name: 'managerid',
-                message: "Enter the manager's employee ID#.",
+                message: "Enter the manager's employee ID#:",
                 validate: manageridInput => {
                     if (manageridInput) {
                         return true;
                     } else {
-                        console.log("Please enter a manager's employee ID#.")
+                        console.log("Please enter a manager's employee ID#:")
                         return false;
                     }
                 }
@@ -50,12 +44,12 @@ function buildTeam() {
             {
                 type: 'input',
                 name: 'manageremail',
-                message: "Enter a manager's email address.",
+                message: "Enter a manager's email address:",
                 validate: manageremailInput => {
                     if (manageremailInput) {
                         return true;
                     } else {
-                        console.log("Please enter a manager's email address.")
+                        console.log("Please enter a manager's email address:")
                         return false;
                     }
                 }
@@ -64,12 +58,12 @@ function buildTeam() {
             {
                 type: 'input',
                 name: 'managerphone',
-                message: "Enter a manager's office phone number.",
+                message: "Enter a manager's office phone number:",
                 validate: managerphoneInput => {
                     if (managerphoneInput) {
                         return true;
                     } else {
-                        console.log("Please enter a manager's office phone number.")
+                        console.log("Please enter a manager's office phone number:")
                         return false;
                     }
                 }
@@ -84,7 +78,7 @@ function buildTeam() {
             });
     }
 
-    // employee functions
+  
     function addMembers() {
         inquirer.prompt([
             {
@@ -110,7 +104,7 @@ function buildTeam() {
                 }
             });
 
-        // Engineer Function
+       
         function addEngineer() {
             inquirer.prompt([
                 {
@@ -178,8 +172,7 @@ function buildTeam() {
                 });
         };
     };
-
-    // Intern function
+    
     function addIntern() {
         inquirer.prompt([
             {
@@ -246,8 +239,7 @@ function buildTeam() {
                 addMembers();
             });
     };
-
-    // Finish team function to write to HTML
+   
     function finishTeam() {
 
         let html = Templates(teamArray)
@@ -257,8 +249,4 @@ function buildTeam() {
 
 };
 
-// End of buildTeam function
-
-
-// Callback function to initialize app
 buildTeam();
