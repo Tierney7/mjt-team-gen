@@ -1,7 +1,5 @@
 // Javascript needs to generate an HTML page 
 const inquirer = require('inquirer')
-<<<<<<< HEAD
-=======
 const fs = require('fs')
 const Manager = require('/Constructors/Manager')
 const Engineer = require('/Constructors/Engineer')
@@ -9,7 +7,6 @@ const Intern = require('.Constructors/Inern')
 
 
 const managerInfo = []
->>>>>>> d90bceb85492fbbd986187aa0140e596b7f78dd4
 
 const Manager = require('./Constructors/Manager')
 const Engineer = require('./Constructors/Engineer')
@@ -86,14 +83,6 @@ function buildTeam() {
             },
         ])
 
-<<<<<<< HEAD
-            .then((answers) => {
-                const newManager = new Manager(answers.managername, answers.managerid, answers.manageremail, answers.managerphone)
-                teamArray.push(newManager)
-                console.log(teamArray);
-                addMembers();
-            });
-=======
         .then((answers) => {
         const newManager = new Manager(answers.managername, answers.managerid, answers.manageremail, answers.managerphone)
 
@@ -102,7 +91,6 @@ function buildTeam() {
             createTeam();
         });
             
->>>>>>> d90bceb85492fbbd986187aa0140e596b7f78dd4
     }
 
     // employee functions
